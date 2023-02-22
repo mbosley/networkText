@@ -1,4 +1,4 @@
-from src.networkBot import networkBot
+from src.networkText import networkText
 
 def main():
     # Read the prompts and data from files
@@ -15,7 +15,7 @@ def main():
         data = f.read().splitlines()
 
     # Initialize the network bot and run it
-    bot = networkBot(main_instructions, example, initial_state, data)
+    bot = networkText(main_instructions, example, initial_state, data)
     bot.window_data(size=1000, overlap=250)
     bot.run(save_path="results/states.txt")
 

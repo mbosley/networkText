@@ -1,0 +1,8 @@
+{
+  "metadata": {
+    "debate_topic": "",
+    "debate_summary": ""
+  },
+  "nodes": [],
+  "edges": []
+}

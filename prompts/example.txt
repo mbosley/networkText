@@ -1,13 +1,5 @@
 Examples:
 current state:
-{
-  "metadata": {
-    "debate_topic": "",
-    "debate_summary": ""
-  },
-  "nodes": [],
-  "edges": []
-}
 
 prompt:
 update_graph(Mr. LANCASTER.(Conservative): Are these hon. gentlemen who interrupt not satisfied with that declaration of the Minister of Finance or are they convinced that he is talking nonsense when he says the majority have no rights in this House?

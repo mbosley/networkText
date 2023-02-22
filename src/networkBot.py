@@ -6,7 +6,7 @@ load_dotenv()
 
 openai.api_key = os.environ.get('OPENAI_API_KEY')
 
-class networkBot:
+class networkText:
     """
     A class for ingesting and processing text data using OpenAI.
 
