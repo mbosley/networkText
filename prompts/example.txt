@@ -1,0 +1,24 @@
+Examples:
+current state:
+{
+  "metadata": {
+    "debate_topic": "",
+    "debate_summary": ""
+  },
+  "nodes": [],
+  "edges": []
+}
+
+prompt:
+update_graph(Mr. LANCASTER.(Conservative): Are these hon. gentlemen who interrupt not satisfied with that declaration of the Minister of Finance or are they convinced that he is talking nonsense when he says the majority have no rights in this House?
+Mr. FIELDING.(Liberal): The hon. gentleman continues to repeat that I said the opposition had no rights. I said nothing of the kind. I said that every member of this. House has the rights which the rules of the House, passed by the majority, give him.)
+
+new state:
+{
+  "metadata": {
+    "debate_topic": "The rights of the opposition",
+    "debate_summary": "Lancaster and Fielding are arguing over the extent to which the opposition have rights in the House of Commons."
+  },
+  "nodes": [{ "id": 1, "name": "Mr. Lancaster", "party": "Conservative", "color": "#ffffff" }, { "id": 2, "name": "Mr. Fielding", "party": "Liberal", "color": "#ff7675" }],
+  "edges": [{"from": 1, "to": 2, "intent": "criticism", "sentiment": "negative", "topic": "Legislators Rights"}, {"from": 2, "to": 1, "intent": "defence", "sentiment": "negative", "topic": "Legislators Rights" } ]
+}
