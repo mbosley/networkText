@@ -74,20 +74,24 @@ class networkText:
             frequency_penalty=0,
             presence_penalty=0
         )
-        return response.choices[0].text.strip()
+        return response.choices[0].text.strip(), response.choices[0].length
+
 
     def run(self, save_path=None, append=True):
+        token_count = 0
         counter = 0
         for window in self.windowed_data:
-            prompt = self.assemble_full_prompt(window)
+            prompt = self.assemble_full_prompt("\n\n".join(window))
             if self.verbose:
                 print(f"Full prompt is:\n\n{prompt}")
-            self.state = self.get_new_state(prompt)
+            new_state, tokens_used = self.get_new_state(prompt)
             if self.verbose:
-                print(f"New state is:\n\n{self.state}")
+                print(f"New state is:\n\n{new_state}")
+            token_count += tokens_used
             if save_path:
                 with open(save_path, "a" if append else "w") as f:
-                    f.write(self.state + "\n")
+                    f.write(new_state + "\n")
             counter += 1
         if self.verbose:
-            print(f"Processed {counter} of {len(self.windowed_data)} windows of data.")
+            print(f"Processed {counter} windows of data.")
+            print(f"Total number of tokens used: {token_count}")
