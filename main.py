@@ -11,12 +11,12 @@ def main():
     with open("prompts/initial_state.txt") as f:
         initial_state = f.read().strip()
 
-    with open("data/network_data.txt") as f:
-        data = f.read().splitlines()
+    with open("data/test_short.txt") as f:
+        data = f.read().strip()
 
     # Initialize the network bot and run it
     bot = networkText(main_instructions, example, initial_state, data)
-    bot.window_data(size=1000, overlap=250)
+    bot.window_data(size=300, overlap=50)
     bot.run(save_path="results/states.txt")
 
 if __name__ == "__main__":
